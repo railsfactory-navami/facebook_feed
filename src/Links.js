@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 
-class Story extends React.Component {
+class Links extends React.Component {
 	
 	  render() {
-			const {story} = this.props
+      const {link} = this.props
+      console.log(link, "sdadsadadadaadad")
 		return (
 		  <div>
 				<div className="coupon">
 						<div className="container">
 							<div className="chip">
 								<img src="img_avatar.png" alt="Person" width="96" height="96"/>
-								{story.from.name}
+								{link.from && link.from.name}
 							</div>
 						</div>
 						<div className="container" >
-							{story.story}
+            <img src={link.full_picture} id="picture_post"/>
 						<p></p>
 						</div>
 						<div className="container">
@@ -26,4 +27,4 @@ class Story extends React.Component {
 	}
 
 
-export default Story;
+export default Links;

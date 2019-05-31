@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 
-class Story extends React.Component {
+class VideoTag extends React.Component {
 	
 	  render() {
-			const {story} = this.props
+      const {video} = this.props
 		return (
 		  <div>
 				<div className="coupon">
 						<div className="container">
 							<div className="chip">
 								<img src="img_avatar.png" alt="Person" width="96" height="96"/>
-								{story.from.name}
+								{video.from && video.from.name}
 							</div>
 						</div>
 						<div className="container" >
-							{story.story}
+            <video
+							src={video.source}
+							controls
+							autplay="true"
+							playsinline
+							muted
+							crossorigin
+							width = "570"
+						/>
 						<p></p>
 						</div>
 						<div className="container">
@@ -26,4 +34,4 @@ class Story extends React.Component {
 	}
 
 
-export default Story;
+export default VideoTag;
